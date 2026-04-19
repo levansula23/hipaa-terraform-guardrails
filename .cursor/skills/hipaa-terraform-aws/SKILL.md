@@ -117,3 +117,4 @@ End with an **"escalate to security or compliance"** list for items that are not
 
 - CFR §164.312 mapping and authoring notes: [reference.md](reference.md)
 - Plain-text PR checklist (works without Cursor): see `CHECKLIST.md` at the repo root
+- Cross-tool canonical system prompt: see `PROMPT.md` at the repo root (use this if you adapt the skill into another assistant such as Claude, ChatGPT, Gemini, or Mistral)

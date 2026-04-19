@@ -1,0 +1,22 @@
+---
+description: HIPAA-oriented review for AWS Terraform. Auto-attaches when editing Terraform files in repos that may handle PHI.
+globs:
+  - "**/*.tf"
+  - "**/*.tfvars"
+  - "**/*.hcl"
+alwaysApply: false
+---
+
+Follow the canonical instructions in [PROMPT.md](mdc:PROMPT.md) and the workflow in [CHECKLIST.md](mdc:CHECKLIST.md).
+
+For long-form CFR §164.312 themes and authoring notes, see [.cursor/skills/hipaa-terraform-aws/reference.md](mdc:.cursor/skills/hipaa-terraform-aws/reference.md).
+
+Hard rules:
+
+1. Never claim a workload is "HIPAA compliant" because of this guidance — frame findings as "aligned with HIPAA Security Rule technical themes."
+2. Never embed real PHI, real account IDs, real ARNs, or real patient identifiers in examples.
+3. Treat PHI leaving the VPC (Bedrock, Textract, SageMaker public endpoints, third-party APIs) as a subprocessor / BAA decision needing human review.
+4. Prefer least-privilege IAM; replace wildcards with explicit action lists scoped by ARN.
+5. Pair every finding with a concrete Terraform direction.
+
+Output shape: group as **Must fix before merge / Should fix soon / Compliance debt**, then end with an *Escalate to security or compliance* list.
